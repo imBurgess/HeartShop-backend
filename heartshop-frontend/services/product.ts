@@ -1,0 +1,46 @@
+// services/product.ts
+import { apiFetch } from "./http/client";
+
+export interface Product {
+  productId: number;
+  categoryId?: number;
+  code: string;
+  name: string;
+  nameEn?: string;
+  price?: number;
+  discountPrice?: number;
+  description?: string;
+  isNew?: boolean;
+  isSoldOut?: boolean;
+  isActive?: boolean;
+  imageUrl?: string;
+}
+
+export const productService = {
+  /**
+   * 取得商品列表
+   */
+  getProducts(params?: {
+    categoryId?: number;
+    isActive?: boolean;
+    isNew?: boolean;
+    keyword?: string;
+    page?: number;
+    pageSize?: number;
+    sortBy?: string;
+    sortOrder?: string;
+  }) {
+    const queryParams = new URLSearchParams();
+    if (params) {
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null) {
+          queryParams.append(key, String(value));
+        }
+      });
+    }
+
+    return apiFetch<any>(`/api/products?${queryParams.toString()}`, {
+      method: "GET",
+    });
+  },
+};

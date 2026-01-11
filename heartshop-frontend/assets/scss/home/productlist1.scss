@@ -1,0 +1,84 @@
+.product-grid {
+  width: min(1200px, 90%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 固定 4 欄
+  gap: 2rem;
+  text-align: center;
+  padding: 40px 80px;
+  margin: 0 auto;
+
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .product-info {
+    margin-top: 10px;
+  }
+
+  .product-name {
+    font-size: 14px;
+    margin: 8px 0 4px;
+  }
+
+  .product-price {
+    font-size: 13px;
+    color: #555;
+  }
+
+  .sold-out {
+    color: #ff7777;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  // 響應式：平板改為 2 欄
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 40px;
+  }
+
+  // 響應式：手機改為 1 欄
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+}
+
+// 「所有商品」按鈕樣式
+.view-all-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 60px 0;
+
+  .view-all-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 48px;
+    border: 2px solid #333;
+    background: transparent;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #333;
+      color: white;
+
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
