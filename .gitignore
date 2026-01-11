@@ -1,0 +1,48 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# Nuxt.js
+.nuxt/
+dist/
+.output/
+.cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build outputs
+build/
+out/
+*.log
+
+# Java/Spring Boot (for HeartShop-Spring)
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+mvnw
+mvnw.cmd
+
+# Temporary files
+*.tmp
+*.temp
+error.txt
+error_home.txt
